@@ -1,0 +1,94 @@
+# Create a Virtual Environment ---- python -m venv .venv
+
+# Activate the Virtual Environment -------  source .venv/bin/activate
+
+                User Question
+                      │
+                      ▼
+              Intent Detection (LLM)
+                      │
+             Conditional Edge
+              /              \
+             /                \
+            ▼                  ▼
+     Calculator Tool      General Chat
+             \              /
+              \            /
+               ▼          ▼
+             Final Answer
+
+
+to install - 
+    pip install langchain langchain-openai python-dotenv
+
+
+
+
+
+general notes:
+
+Gemini = the brain 🧠
+LangGraph = the manager/project coordinator 📋
+
+The brain knows how to think.
+
+The manager decides:
+
+Which task comes first?
+Which worker should do the next task?
+When is the work finished?
+
+That's exactly what LangGraph does.
+
+StateGraph is the main LangGraph object used to define an agent's workflow. It manages the shared state, nodes, and edges, and controls how data flows through the application from START to END.
+
+A Tool is a capability that an AI agent can use to perform a specific task.
+
+
+current workflow - after added "calculator_tool"
+
+                 START
+                   |
+                   ▼
+          detect_intent node
+          (Gemini decides)
+                   |
+                   ▼
+          route_question()
+          (LangGraph decides path)
+             /             \
+            /               \
+           ▼                 ▼
+ calculator_node        general_chat
+      |
+      ▼
+ Gemini extracts expression
+      |
+      ▼
+ calculator_tool
+      |
+      ▼
+ Update State
+      |
+      ▼
+      END
+# Gemini LLM 🧠
+        Understands language
+        Classifies intent
+        Extracts math expressions
+        Generates responses
+# LangGraph 🎯
+        Controls workflow
+        Moves state between steps
+        Decides which node executes
+# Node ⚙️
+        Performs a specific task
+        Reads state
+        Calls LLM/tool
+        Updates state
+# Tool 🧮
+        Performs a specialized action
+        Returns a result
+******* - my project workflow - *******
+
+I built a LangGraph workflow where Gemini acts as the reasoning engine. LangGraph manages the workflow execution. The application maintains a shared state that flows between nodes. The intent detection node uses the LLM to classify the user's request, and conditional edges route the request either to a calculator tool or a general response node.

@@ -1,0 +1,71 @@
+Let's verify that first
+In your terminal, run:
+which python3
+
+Then run:
+
+python3 -m pip show langgraph
+
+and
+
+python3 -m pip show langchain-google-genai
+
+If those commands show package information, then your installation is perfectly fine.
+
+Now fix VS Code
+Step 1
+
+Press
+
+Cmd + Shift + P
+
+Search for:
+
+Python: Select Interpreter
+
+Click it.
+
+Step 2
+
+You should see something similar to:
+
+.venv/bin/python
+
+or
+
+Python 3.13 (.venv)
+
+Select that one.
+
+Do not select:
+
+Python 3.x (/usr/bin/python)
+
+or
+
+Homebrew Python
+Step 3
+
+After selecting it,
+
+Press
+
+Cmd + Shift + P
+
+again
+
+Search
+
+Developer: Reload Window
+
+or simply close VS Code and reopen it.
+
+Usually the warnings disappear.
+
+
+for another model
+
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash-lite",
+    temperature=0
+)
