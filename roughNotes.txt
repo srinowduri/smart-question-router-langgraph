@@ -1,0 +1,51 @@
+LangChain helps you connect an LLM with things it can use. LangChain as 🧰 a toolbox.
+
+LangGraph controls the flow between different steps.
+START
+  ↓
+Agent
+  ↓
+Does it need a tool?
+  ↙       ↘
+Tools      END
+  ↓
+Agent
+
+LangGraph as 🚦 a traffic controller.
+
+It decides:
+
+"Where does the workflow go next?"
+
+
+->  The easiest way to remember
+🧰 LangChain = What the agent can use
+LLM
+Tools
+Prompts
+Documents
+APIs
+🕸️ LangGraph = How the agent moves
+Node → Node → Node
+        ↓
+   Conditional route
+        ↓
+     Tool → Back
+
+One sentence to remember ❤️
+
+LangChain gives the agent its capabilities; LangGraph controls the agent's workflow.
+
+steps to complete
+
+We'll go step-by-step:
+
+Choose a free weather API.
+Get an API key.
+Put the key safely in your .env file.
+Install the required Python package if needed.
+Modify only your weather_tool.
+Send the city/location to the API.
+Get real temperature, conditions, etc.
+Return that information to your LLM.
+Test it with Bentonville, Visakhapatnam, Hyderabad, etc.

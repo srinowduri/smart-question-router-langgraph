@@ -92,3 +92,19 @@ current workflow - after added "calculator_tool"
 ******* - my project workflow - *******
 
 I built a LangGraph workflow where Gemini acts as the reasoning engine. LangGraph manages the workflow execution. The application maintains a shared state that flows between nodes. The intent detection node uses the LLM to classify the user's request, and conditional edges route the request either to a calculator tool or a general response node.
+
+
+
+calculator
+general Chat
+nutrition agent
+weather agent
+
+
+gl - API key
+
+gl-U2FsdGVkX1/ZKIyyKpzFTVkhhwjaPwRRwCOuh88SiLaY2HC4LUh8X82NPjxYu3mu
+
+
+API Base:
+https://aibe.mygreatlearning.com/openai/v1

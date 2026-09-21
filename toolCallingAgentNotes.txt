@@ -1,0 +1,37 @@
+new architecture will be:
+
+                 User Question
+                       |
+                       v
+                  Gemini LLM
+                       |
+              "I need this tool"
+                       |
+                       v
+              calculator_tool
+                       |
+                       v
+                  Tool Result
+                       |
+                       v
+                  Final Answer
+
+
+Instead of:
+
+question
+answer
+
+we're now going to let the agent maintain a conversation:
+
+messages
+   ↓
+User message
+   ↓
+LLM response
+   ↓
+Tool call
+   ↓
+Tool result
+   ↓
+LLM response

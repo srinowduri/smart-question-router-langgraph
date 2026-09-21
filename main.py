@@ -53,6 +53,7 @@ graph = StateGraph(State)
 # -----------------------------
 # Calculator Tool
 # -----------------------------
+
 @tool
 def calculator_tool(expression: str) -> str:
     """
